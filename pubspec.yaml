@@ -1,0 +1,23 @@
+name: flutty_tables
+description: "Advanced table components for Flutter with sorting, filtering and pagination."
+version: 0.1.0
+homepage: https://github.com/Flutty-Lab/flutty_tables
+repository: https://github.com/Flutty-Lab/flutty_tables
+issue_tracker: https://github.com/Flutty-Lab/flutty_tables/issues
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutty_ds:
+    path: ../flutty_ds
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
