@@ -10,24 +10,53 @@ Advanced table components for Flutter with sorting, filtering and pagination.
 
 ```yaml
 dependencies:
-  flutty_tables: ^0.1.0
+  flutty_tables: ^0.1.1
 ```
 
 ## Usage
 
+## Quick start
+
 ```dart
 import 'package:flutty_tables/flutty_tables.dart';
 
-FluttyTable<User>(
-  columns: [
-    FluttyColumn(
-      title: 'Name',
-      cellBuilder: (user) => Text(user.name),
+StaticRowTable(
+  title: 'User info',
+  elements: [
+    StaticRowTableElement(
+      rowBuilder: () => const Row(
+        children: [
+          Expanded(child: Text('Name')),
+          Text('Alice'),
+        ],
+      ),
+    ),
+    StaticRowTableElement(
+      rowBuilder: () => const Row(
+        children: [
+          Expanded(child: Text('Email')),
+          Text('alice@example.com'),
+        ],
+      ),
     ),
   ],
-  rows: users,
+);
+
+ExpandableRowTable(
+  title: 'Orders',
+  elements: [
+    ExpandedRowTableElement(
+      id: 'order-1',
+      rowBuilder: () => const Text('Order #1'),
+      expendedBuilder: () => const [Text('Details')],
+    ),
+  ],
 );
 ```
+
+## Example
+
+See `packages/flutty_tables/example` for a small demo app.
 
 ## API Documentation
 
