@@ -20,5 +20,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutty_test: 0.2.0
+
+dependency_overrides:
   flutty_test:
     path: ../flutty_test
