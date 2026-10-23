@@ -6,5 +6,7 @@ export 'row/static_row_table_element.dart';
 
 export 'table/expandable_row_table.dart';
 export 'table/expandable_row_table_card.dart';
+export 'table/sliver_expandable_row_table.dart';
+export 'table/sliver_static_row_table.dart';
 export 'table/static_row_table.dart';
 export 'table/static_row_table_card.dart';
