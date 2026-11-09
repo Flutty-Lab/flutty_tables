@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutty_ds/dimens.dart';
 import 'package:flutty_tables/row/static_row_table_element.dart';
 
+/// Simple table rendering non-expandable rows with alternating colors.
 class StaticRowTable extends StatelessWidget {
+  /// Creates a [StaticRowTable] from a list of [StaticRowTableElement].
   const StaticRowTable({
     required this.elements,
     this.title,
@@ -12,11 +14,19 @@ class StaticRowTable extends StatelessWidget {
     super.key,
   });
 
+  /// The rows to display, in order.
   final List<StaticRowTableElement> elements;
 
+  /// Optional header displayed above the rows.
   final String? title;
+
+  /// Color of even-indexed rows.
   final Color firstColor;
+
+  /// Color of odd-indexed rows.
   final Color secondColor;
+
+  /// Border radius applied to the outer corners of the table.
   final BorderRadius? radius;
 
   @override

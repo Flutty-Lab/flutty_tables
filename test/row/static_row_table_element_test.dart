@@ -25,9 +25,7 @@ void main() {
 
     test('rowBuilder should return widget', () {
       const widget = Text('Test Row');
-      final element = StaticRowTableElement(
-        rowBuilder: () => widget,
-      );
+      final element = StaticRowTableElement(rowBuilder: () => widget);
 
       final result = element.rowBuilder();
       expect(result, equals(widget));

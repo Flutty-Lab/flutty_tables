@@ -1,3 +1,10 @@
+## 0.3.0
+
+- Require Flutter >=3.47.0 / Dart >=3.13.0
+- Bump `flutty_ds` dependency to ^0.2.0
+- Bump `flutty_test` dev dependency to ^0.3.0 (vendored, `golden_toolkit` removed)
+- Add dartdoc comments across the public API
+
 ## 0.2.0
 
 - Add `SliverExpandableRowTable` and `SliverStaticRowTable`: lazy-rendering

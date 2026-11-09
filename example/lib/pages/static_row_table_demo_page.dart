@@ -38,15 +38,9 @@ class StaticRowTableDemoPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          StaticRowTable(
-            title: 'StaticRowTable',
-            elements: elements,
-          ),
+          StaticRowTable(title: 'StaticRowTable', elements: elements),
           const SizedBox(height: 16),
-          StaticRowTableCard(
-            title: 'StaticRowTableCard',
-            elements: elements,
-          ),
+          StaticRowTableCard(title: 'StaticRowTableCard', elements: elements),
         ],
       ),
     );

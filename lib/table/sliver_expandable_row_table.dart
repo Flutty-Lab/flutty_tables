@@ -17,8 +17,9 @@ class SliverExpandableRowTable extends StatelessWidget {
     this.secondColor = Colors.white54,
     this.radius,
     super.key,
-  }) : _elements =
-            elements.where((e) => e.displayBuilder?.call() ?? true).toList();
+  }) : _elements = elements
+           .where((e) => e.displayBuilder?.call() ?? true)
+           .toList();
 
   final List<ExpandedRowTableElement> _elements;
 
@@ -68,54 +69,48 @@ class SliverExpandableRowTable extends StatelessWidget {
             ),
           ),
         SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              final element = _elements[index];
+          delegate: SliverChildBuilderDelegate((context, index) {
+            final element = _elements[index];
 
-              final lineColor = index.isEven ? firstColor : secondColor;
+            final lineColor = index.isEven ? firstColor : secondColor;
 
-              final expendedElements = element.expendedBuilder();
+            final expendedElements = element.expendedBuilder();
 
-              return DecoratedBox(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: index.isEven
-                        ? Alignment.topLeft
-                        : Alignment.bottomRight,
-                    end: index.isEven
-                        ? Alignment.bottomRight
-                        : Alignment.topLeft,
-                    colors: [lineColor.withAlpha(80), lineColor.withAlpha(150)],
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: index == 0 && radius != null && title == null
-                        ? radius!.topLeft
-                        : Radius.zero,
-                    topRight: index == 0 && radius != null && title == null
-                        ? radius!.topRight
-                        : Radius.zero,
-                    bottomLeft: index == _elements.length - 1 && radius != null
-                        ? radius!.bottomLeft
-                        : Radius.zero,
-                    bottomRight: index == _elements.length - 1 && radius != null
-                        ? radius!.bottomRight
-                        : Radius.zero,
-                  ),
+            return DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: index.isEven
+                      ? Alignment.topLeft
+                      : Alignment.bottomRight,
+                  end: index.isEven ? Alignment.bottomRight : Alignment.topLeft,
+                  colors: [lineColor.withAlpha(80), lineColor.withAlpha(150)],
                 ),
-                child: Theme(
-                  data:
-                      context.theme.copyWith(dividerColor: Colors.transparent),
-                  child: ExpansionTile(
-                    key: Key(element.id),
-                    showTrailingIcon: expendedElements.isNotEmpty,
-                    title: element.rowBuilder(),
-                    children: expendedElements,
-                  ),
+                borderRadius: BorderRadius.only(
+                  topLeft: index == 0 && radius != null && title == null
+                      ? radius!.topLeft
+                      : Radius.zero,
+                  topRight: index == 0 && radius != null && title == null
+                      ? radius!.topRight
+                      : Radius.zero,
+                  bottomLeft: index == _elements.length - 1 && radius != null
+                      ? radius!.bottomLeft
+                      : Radius.zero,
+                  bottomRight: index == _elements.length - 1 && radius != null
+                      ? radius!.bottomRight
+                      : Radius.zero,
                 ),
-              );
-            },
-            childCount: _elements.length,
-          ),
+              ),
+              child: Theme(
+                data: context.theme.copyWith(dividerColor: Colors.transparent),
+                child: ExpansionTile(
+                  key: Key(element.id),
+                  showTrailingIcon: expendedElements.isNotEmpty,
+                  title: element.rowBuilder(),
+                  children: expendedElements,
+                ),
+              ),
+            );
+          }, childCount: _elements.length),
         ),
       ],
     );

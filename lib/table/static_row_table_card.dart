@@ -11,9 +11,10 @@ class StaticRowTableCard extends StatelessWidget {
     this.secondColor = Colors.white54,
     BorderRadius? radius,
     super.key,
-  })  : radius = radius ?? BorderRadius.circular(Dimens.doubleRadius),
-        _elements =
-            elements.where((e) => e.displayBuilder?.call() ?? true).toList();
+  }) : radius = radius ?? BorderRadius.circular(Dimens.doubleRadius),
+       _elements = elements
+           .where((e) => e.displayBuilder?.call() ?? true)
+           .toList();
 
   final List<StaticRowTableElement> _elements;
 

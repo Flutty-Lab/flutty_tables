@@ -15,9 +15,7 @@ class HomePage extends StatelessWidget {
         children: [
           FilledButton(
             onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const StaticRowTableDemoPage(),
-              ),
+              MaterialPageRoute(builder: (_) => const StaticRowTableDemoPage()),
             ),
             child: const Text('StaticRowTable / Card'),
           ),

@@ -34,10 +34,7 @@ class ExpandableRowTableDemoPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          ExpandableRowTable(
-            title: 'ExpandableRowTable',
-            elements: elements,
-          ),
+          ExpandableRowTable(title: 'ExpandableRowTable', elements: elements),
           const SizedBox(height: 16),
           ExpandableRowTableCard(
             title: 'ExpandableRowTableCard',

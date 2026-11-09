@@ -93,6 +93,9 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
+          // InkSparkle's shader fails to decode in the test environment
+          // (Flutter 3.47): use InkRipple for the tap feedback instead.
+          theme: ThemeData(splashFactory: InkRipple.splashFactory),
           home: Scaffold(
             body: CustomScrollView(
               slivers: [

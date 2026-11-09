@@ -3,7 +3,13 @@ import 'package:flutty_ds/dimens.dart';
 import 'package:flutty_ds/theme_extension.dart';
 import 'package:flutty_tables/row/expanded_row_table_element.dart';
 
+/// Table whose rows can be expanded to reveal extra content.
+///
+/// Rows are rendered as [ExpansionTile]s with alternating [firstColor] /
+/// [secondColor] gradients. Elements whose [ExpandedRowTableElement.displayBuilder]
+/// returns `false` are filtered out.
 class ExpandableRowTable extends StatelessWidget {
+  /// Creates an [ExpandableRowTable] from a list of [ExpandedRowTableElement].
   ExpandableRowTable({
     required List<ExpandedRowTableElement> elements,
     this.title,
@@ -11,14 +17,22 @@ class ExpandableRowTable extends StatelessWidget {
     this.secondColor = Colors.white54,
     this.radius,
     super.key,
-  }) : _elements =
-            elements.where((e) => e.displayBuilder?.call() ?? true).toList();
+  }) : _elements = elements
+           .where((e) => e.displayBuilder?.call() ?? true)
+           .toList();
 
   final List<ExpandedRowTableElement> _elements;
 
+  /// Optional header displayed above the rows.
   final String? title;
+
+  /// Color of even-indexed rows.
   final Color firstColor;
+
+  /// Color of odd-indexed rows.
   final Color secondColor;
+
+  /// Border radius applied to the outer corners of the table.
   final BorderRadius? radius;
 
   @override
