@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'expandable_row_table_demo_page.dart';
 import 'static_row_table_demo_page.dart';

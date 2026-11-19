@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutty_tables/row/expanded_row_table_element.dart';
 import 'package:flutty_tables/table/sliver_expandable_row_table.dart';
